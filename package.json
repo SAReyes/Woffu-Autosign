@@ -7,13 +7,20 @@
     "woffu-autosign": "bin/woffu-autosign.js"
   },
   "scripts": {
-    "start": "node ."
+    "start": "node .",
+    "lint": "eslint --fix ."
   },
   "author": "Sirikon <hello@sirikon.me>",
   "license": "GPL",
   "dependencies": {
     "ansi-colors": "^3.2.4",
     "jsonwebtoken": "^8.5.1",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "sqlite3": "^4.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.0"
   }
 }
