@@ -36,7 +36,7 @@ function toggleSign(domain, token) {
     console.log('toggling sign in');
     const afterToggle = await repo.toggleStatus();
     const logs = await repo.getSignInLogs();
-    resolve({ signedIn: true });
+    resolve({ signedIn: afterToggle });
   });
   // return new Promise((resolve, reject) => {
   //
