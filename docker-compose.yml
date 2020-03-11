@@ -1,0 +1,10 @@
+version: '3'
+services:
+  main:
+    build: .
+    environment:
+      - PORT=9090
+      - WOFFU_PASSWORD=
+      - WOFFU_USERNAME=
+    ports:
+      - "9090:9090"
