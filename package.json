@@ -15,7 +15,7 @@
   "dependencies": {
     "ansi-colors": "^3.2.4",
     "jsonwebtoken": "^8.5.1",
-    "request": "^2.88.0",
+    "request": "^2.88.0"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
