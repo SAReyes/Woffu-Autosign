@@ -1,6 +1,5 @@
 const request = require('request');
 const jwt = require('jsonwebtoken');
-const repo = require('./repository')();
 
 const APP_DOMAIN = 'app.woffu.com';
 
@@ -34,9 +33,7 @@ function parseSignResponse(body) {
 function toggleSign(domain, token) {
   return new Promise(async (resolve, reject) => {
     console.log('toggling sign in');
-    const afterToggle = await repo.toggleStatus();
-    const logs = await repo.getSignInLogs();
-    resolve({ signedIn: afterToggle });
+    resolve({ signedIn: true });
   });
   // return new Promise((resolve, reject) => {
   //
