@@ -23,7 +23,7 @@ async function toggleSign() {
 }
 
 module.exports = async () => {
-  const wait = Math.floor(Math.random() * 0.2 * 1000 * 60);
+  const wait = Math.floor(Math.random() * 30 * 1000 * 60);
   console.log('wait start', new Date().toISOString());
   setTimeout(async () => {
     await toggleSign();
