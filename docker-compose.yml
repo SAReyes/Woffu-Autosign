@@ -3,6 +3,7 @@ services:
   main:
     build: .
     environment:
+      - HOST=0.0.0.0
       - PORT=9090
       - WOFFU_PASSWORD=
       - WOFFU_USERNAME=

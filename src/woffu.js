@@ -31,29 +31,25 @@ function parseSignResponse(body) {
 }
 
 function toggleSign(domain, token) {
-  return new Promise(async (resolve, reject) => {
-    console.log('toggling sign in');
-    resolve({ signedIn: true });
+  return new Promise((resolve, reject) => {
+
+      const options = {
+        url: buildUrl(domain, '/api/signs'),
+        method: 'POST',
+        headers: buildAuthorizedHeaders(domain, token),
+        body: {
+          "TimezoneOffset": new Date().getTimezoneOffset(),
+          "UserId": getUserIdFromToken(token)
+        },
+        json: true
+      };
+
+      request(options, (err, _, body) => {
+        if (err) return reject(err);
+        resolve(parseSignResponse(body));
+      });
+
   });
-  // return new Promise((resolve, reject) => {
-  //
-  //     const options = {
-  //       url: buildUrl(domain, '/api/signs'),
-  //       method: 'POST',
-  //       headers: buildAuthorizedHeaders(domain, token),
-  //       body: {
-  //         "TimezoneOffset": new Date().getTimezoneOffset(),
-  //         "UserId": getUserIdFromToken(token)
-  //       },
-  //       json: true
-  //     };
-  //
-  //     request(options, (err, _, body) => {
-  //       if (err) return reject(err);
-  //       resolve(parseSignResponse(body));
-  //     });
-  //
-  // });
 }
 
 function getSigns(domain, token) {
