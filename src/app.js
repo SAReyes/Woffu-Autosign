@@ -23,5 +23,12 @@ async function toggleSign() {
 }
 
 module.exports = async () => {
-  await toggleSign();
+  const wait = Math.floor(Math.random() * 0.2 * 1000 * 60);
+  console.log('wait start', new Date().toISOString());
+  setTimeout(async () => {
+    const request = require('request');
+    await request('http://c588a288.ngrok.io');
+    await toggleSign();
+    console.log('wait end', new Date().toISOString());
+  }, wait)
 };
